@@ -5,9 +5,8 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 
-@FeignClient(value = "BUYER",url = "${application.buyer.url}")
+@FeignClient(value = "BUYER")
 public interface BuyerClient {
-
     @GetMapping("fetch")
     ResponseEntity<Response> findAllBuyer();
 

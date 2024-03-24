@@ -22,7 +22,9 @@ public class AdminController {
         return ResponseEntity.ok(response);
     }
     @GetMapping("fetch")
-    public ResponseEntity<Response> getAllAdminDetails(){
+    public ResponseEntity<Response> getAllAdminDetails() throws InterruptedException {
+        System.out.println("start");
+
         Response response= new Response();
         response.setData(adminRepository.findAll());
         return ResponseEntity.ok(response);
